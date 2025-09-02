@@ -71,7 +71,7 @@ EXPOSE 27015/udp 27016/udp
 # #install the forst
 COPY scripts/install-forest.sh /
 RUN bash /install-forest.sh
-RUN ls /theforest
+RUN find /theforest -name "*.exe" -type f
 
 WORKDIR /theforest
 
