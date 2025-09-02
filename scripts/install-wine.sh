@@ -10,9 +10,9 @@ set -euxo pipefail
 # - Wine download links from WineHQ: https://dl.winehq.org/wine-builds/
 
 branch="stable" #example: devel, staging, or stable (wine-staging 4.5+ requires libfaudio0:i386)
-version="9.0" #example: "7.1"
-id="debian" #example: debian, ubuntu
-dist="bookworm" #example (for debian): bullseye, buster, jessie, wheezy, ${VERSION_CODENAME}, etc
+version="10.0.0.0" #example: "7.1"
+id="ubuntu" #example: debian, ubuntu
+dist="jammy" #example (for ubuntu): jammy, focal, etc
 tag="-1" #example: -1 (some wine .deb files have -1 tag on the end and some don't)
 
 ########################################################
@@ -29,9 +29,9 @@ DEB_B3="winehq-${branch}_${version}~${dist}${tag}_i386.deb" #shortcuts & docs
 
 # Install amd64-wine (64-bit) alongside i386-wine (32-bit)
 echo -e "Downloading wine . . ."
-wget -q ${LNKA}${DEB_A1}
-wget -q ${LNKA}${DEB_A2}
-wget -q ${LNKB}${DEB_B1}
+curl -L -o ${DEB_A1} ${LNKA}${DEB_A1} || wget -q ${LNKA}${DEB_A1}
+curl -L -o ${DEB_A2} ${LNKA}${DEB_A2} || wget -q ${LNKA}${DEB_A2}
+curl -L -o ${DEB_B1} ${LNKB}${DEB_B1} || wget -q ${LNKB}${DEB_B1}
 
 echo -e "Extracting wine . . ."
 dpkg-deb -x ${DEB_A1} wine-installer

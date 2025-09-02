@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim as build
+FROM ubuntu:22.04 as build
 
 ENV DEBIAN_FRONTEND="noninteractive"
 
@@ -25,7 +25,7 @@ RUN git clone https://github.com/ptitSeb/box64 \
  && make -j$(nproc) \
  && make install DESTDIR=/box
 
-FROM debian:bookworm-slim
+FROM ubuntu:22.04
 
 # Copy compiled box86 and box64 binaries
 COPY --from=build /box /
