@@ -1,5 +1,8 @@
-echo -1 > /proc/sys/fs/binfmt_misc/FEX-x86 2>/dev/null || true
-echo -1 > /proc/sys/fs/binfmt_misc/FEX-x86_64 2>/dev/null || true
+for file in /proc/sys/fs/binfmt_misc/*; do
+  if grep -q "FEXInterpreter" "$file" 2>/dev/null; then
+    echo -1 > "$file" 2>/dev/null || true
+  fi
+done
 export PATH=/usr/local/bin:$PATH
 wine wineboot && wine64 wineboot
 xvfb-run sh -c "winetricks -q vcrun2019"
