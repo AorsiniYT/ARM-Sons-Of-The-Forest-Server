@@ -76,7 +76,7 @@ chmod +x winetricks
 mv winetricks /usr/local/bin/
 
 # Clean up
-rm libfaudio0_*~bpo10+1_i386.deb
+rm libfaudio0_*_i386.deb
 rm -rf libfaudio
 apt-get -y autoremove
 apt-get clean autoclean
