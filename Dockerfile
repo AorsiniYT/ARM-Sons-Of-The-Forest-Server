@@ -30,10 +30,6 @@ FROM ubuntu:22.04
 # Copy compiled box86 and box64 binaries
 COPY --from=build /box /
 
-# Disable FEX binfmt_misc entries to avoid conflicts
-RUN echo -1 > /proc/sys/fs/binfmt_misc/FEX-x86 2>/dev/null || true
-RUN echo -1 > /proc/sys/fs/binfmt_misc/FEX-x86_64 2>/dev/null || true
-
 # Install libraries needed to run box
 RUN dpkg --add-architecture armhf \
  && apt-get update \
