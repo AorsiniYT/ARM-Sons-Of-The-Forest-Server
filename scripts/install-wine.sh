@@ -18,11 +18,11 @@ tag="-1" #example: -1 (some wine .deb files have -1 tag on the end and some don'
 ########################################################
 
 # Wine download links from WineHQ: https://dl.winehq.org/wine-builds/
-LNKA="https://dl.winehq.org/wine-builds/${id}/dists/${dist}/main/binary-amd64/" #amd64-wine links
+LNKA="https://dl.winehq.org/wine-builds/${id}/pool/main/w/wine/" #amd64-wine links
 DEB_A1="wine-${branch}-amd64_${version}~${dist}${tag}_amd64.deb" #wine64 main bin
 DEB_A2="wine-${branch}_${version}~${dist}${tag}_amd64.deb" #wine64 support files (required for wine64 / can work alongside wine_i386 main bin)
 DEB_A3="winehq-${branch}_${version}~${dist}${tag}_amd64.deb" #shortcuts & docs
-LNKB="https://dl.winehq.org/wine-builds/${id}/dists/${dist}/main/binary-i386/" #i386-wine links
+LNKB="https://dl.winehq.org/wine-builds/${id}/pool/main/w/wine/" #i386-wine links
 DEB_B1="wine-${branch}-i386_${version}~${dist}${tag}_i386.deb" #wine_i386 main bin
 DEB_B2="wine-${branch}_${version}~${dist}${tag}_i386.deb" #wine_i386 support files (required for wine_i386 if no wine64 / CONFLICTS WITH wine64 support files)
 DEB_B3="winehq-${branch}_${version}~${dist}${tag}_i386.deb" #shortcuts & docs
