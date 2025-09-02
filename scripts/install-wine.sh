@@ -10,7 +10,7 @@ set -euxo pipefail
 # - Wine download links from WineHQ: https://dl.winehq.org/wine-builds/
 
 branch="stable" #example: devel, staging, or stable (wine-staging 4.5+ requires libfaudio0:i386)
-version="9.0.0.0" #example: "7.1"
+version="9.0" #example: "7.1"
 id="debian" #example: debian, ubuntu
 dist="bookworm" #example (for debian): bullseye, buster, jessie, wheezy, ${VERSION_CODENAME}, etc
 tag="-1" #example: -1 (some wine .deb files have -1 tag on the end and some don't)
