@@ -60,8 +60,8 @@ RUN mkdir -p /root/.wine /root/.wine64
 
 # Download and set up SteamCMD
 RUN mkdir /steamcmd && cd /steamcmd \
- && wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip \
- && unzip steamcmd.zip
+ && wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz \
+ && tar -xvzf steamcmd_linux.tar.gz
 
 # Create directory for The Forest and set permissions
 RUN mkdir /theforest && chmod 777 /theforest

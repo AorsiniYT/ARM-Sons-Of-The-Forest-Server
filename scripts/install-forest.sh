@@ -1,9 +1,11 @@
 export PATH=/usr/local/bin:$PATH
+xvfb-run sh -c "winetricks -q vcrun2019"
+/steamcmd/steamcmd.sh +force_install_dir /theforest +login anonymous +app_update 556450 +quit
+echo "Waiting for download to complete..."TH=/usr/local/bin:$PATH
 echo '#!/bin/bash
 box64 wine64 "$@"' > /usr/local/bin/wine-wrapper
 chmod +x /usr/local/bin/wine-wrapper
 export WINE=/usr/local/bin/wine-wrapper
-box64 wine64 wineboot
 xvfb-run sh -c "winetricks -q vcrun2019"
 echo "Starting SteamCMD installation..."
 wine64 /steamcmd/steamcmd.exe +force_install_dir Z:/theforest +login anonymous +app_update 556450 +quit
