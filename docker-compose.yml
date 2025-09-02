@@ -8,3 +8,4 @@ services:
     volumes:
       - ./data:/server-data
     tty: true
+    privileged: true
