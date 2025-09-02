@@ -1,5 +1,4 @@
 export PATH=/usr/local/bin:$PATH
-xvfb-run sh -c "winetricks -q vcrun2019"
 /steamcmd/steamcmd.sh +force_install_dir /theforest +login anonymous +app_update 556450 +quit
 echo "Waiting for download to complete..."TH=/usr/local/bin:$PATH
 echo '#!/bin/bash
