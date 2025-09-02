@@ -60,21 +60,21 @@ RUN mkdir /steamcmd && cd /steamcmd \
  && wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip \
  && unzip steamcmd.zip
 
-# Create directory for Sons of the Forest and set permissions
-RUN mkdir /sonsoftheforest && chmod 777 /sonsoftheforest
+# Create directory for The Forest and set permissions
+RUN mkdir /theforest && chmod 777 /theforest
 
-EXPOSE 8766/udp 27016/udp 9700/udp
+EXPOSE 27015/udp 27016/udp
 
 # #install the forst
 COPY scripts/install-forest.sh /
 RUN bash /install-forest.sh
 RUN ls
 
-WORKDIR /sonsoftheforest
+WORKDIR /theforest
 
 # Copy the start-server script and make sure it's executable
-COPY scripts/start-server.sh /sonsoftheforest/start-server.sh
-RUN chmod +x /sonsoftheforest/start-server.sh
+COPY scripts/start-server.sh /theforest/start-server.sh
+RUN chmod +x /theforest/start-server.sh
 
 # Use the script as the entry point
 ENTRYPOINT ["bash", "start-server.sh"]

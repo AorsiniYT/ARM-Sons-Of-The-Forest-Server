@@ -1,11 +1,10 @@
 services:
-  sons-of-the-forest-server:
+  the-forest-server:
     build: .
-    container_name: sons-of-the-forest-server
+    container_name: the-forest-server
     ports:
-      - 8766:8766/udp
+      - 27015:27015/udp
       - 27016:27016/udp
-      - 9700:9700/udp
     volumes:
       - ./data:/server-data
     tty: true

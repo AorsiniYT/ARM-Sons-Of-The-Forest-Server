@@ -1,4 +1,4 @@
-# Arm 64 sons of the forest server
+# Arm 64 the forest server
 
 Should just start with `docker compose up`
 
