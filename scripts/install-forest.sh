@@ -1,12 +1,5 @@
-echo "Checking binfmt_misc entries..."
-ls /proc/sys/fs/binfmt_misc/ 2>/dev/null || echo "No binfmt_misc entries found"
-for file in /proc/sys/fs/binfmt_misc/*; do
-  if grep -q "FEXInterpreter" "$file" 2>/dev/null; then
-    echo "Disabling FEX entry: $file"
-    echo -1 > "$file" 2>/dev/null || echo "Failed to disable $file"
-  fi
-done
-echo "FEX disable attempt complete."
+echo -1 > /proc/sys/fs/binfmt_misc/FEX-x86 2>/dev/null || true
+echo -1 > /proc/sys/fs/binfmt_misc/FEX-x86_64 2>/dev/null || true
 export PATH=/usr/local/bin:$PATH
 wine wineboot && wine64 wineboot
 xvfb-run sh -c "winetricks -q vcrun2019"
