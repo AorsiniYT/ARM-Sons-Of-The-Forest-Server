@@ -2,7 +2,7 @@ export PATH=/usr/local/bin:$PATH
 wine wineboot && wine64 wineboot
 xvfb-run sh -c "winetricks -q vcrun2019"
 echo "Starting SteamCMD installation..."
-wine64 /steamcmd/steamcmd.exe +force_install_dir Z:/theforest +login anonymous +app_update 556450 validate +quit
+wine64 /steamcmd/steamcmd.exe +force_install_dir Z:/theforest +login anonymous +app_update 556450 +quit
 echo "Waiting for download to complete..."
 attempts=0
 max_attempts=100  # ~50 minutes with 30s sleep
