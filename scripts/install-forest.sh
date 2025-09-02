@@ -1,5 +1,5 @@
 export PATH=/usr/local/bin:$PATH
-/steamcmd/steamcmd.sh +force_install_dir /theforest +login anonymous +app_update 556450 +quit
+box86 /steamcmd/linux32/steamcmd +force_install_dir /theforest +login anonymous +app_update 556450 +quit
 echo "Waiting for download to complete..."TH=/usr/local/bin:$PATH
 echo '#!/bin/bash
 box64 wine64 "$@"' > /usr/local/bin/wine-wrapper
