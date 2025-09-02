@@ -55,6 +55,9 @@ COPY scripts/wrap-wine.sh /
 RUN bash /wrap-wine.sh \
  && rm /wrap-wine.sh
 
+# Create Wine prefixes
+RUN mkdir -p /root/.wine /root/.wine64
+
 # Download and set up SteamCMD
 RUN mkdir /steamcmd && cd /steamcmd \
  && wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip \
@@ -68,7 +71,7 @@ EXPOSE 27015/udp 27016/udp
 # #install the forst
 COPY scripts/install-forest.sh /
 RUN bash /install-forest.sh
-RUN ls
+RUN ls /theforest
 
 WORKDIR /theforest
 
