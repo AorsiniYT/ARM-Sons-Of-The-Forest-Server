@@ -65,7 +65,9 @@ apt-get install -y libasound2-plugins:arm64 libasound2:arm64 libc6:arm64 libcapi
 apt install libstb0 -y
 cd ~
 wget -r -l1 -np -nd -A "libfaudio0_*_i386.deb" http://archive.ubuntu.com/ubuntu/pool/universe/f/faudio/ # Download libfaudio i386 for Ubuntu
-dpkg-deb -xv libfaudio0_*_i386.deb libfaudio
+for deb in libfaudio0_*_i386.deb; do
+  dpkg-deb -xv "$deb" libfaudio
+done
 cp -TRv libfaudio/usr/ /usr/
 
 # Install winetricks
