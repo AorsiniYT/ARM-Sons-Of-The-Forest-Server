@@ -9,3 +9,4 @@ services:
       - ./data:/server-data
     tty: true
     privileged: true
+    pid: host
