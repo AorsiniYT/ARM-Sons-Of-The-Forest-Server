@@ -3,7 +3,7 @@ echo '#!/bin/bash
 box64 wine64 "$@"' > /usr/local/bin/wine-wrapper
 chmod +x /usr/local/bin/wine-wrapper
 export WINE=/usr/local/bin/wine-wrapper
-wine wineboot && wine64 wineboot
+box86 wine wineboot && box64 wine64 wineboot
 xvfb-run sh -c "winetricks -q vcrun2019"
 echo "Starting SteamCMD installation..."
 wine64 /steamcmd/steamcmd.exe +force_install_dir Z:/theforest +login anonymous +app_update 556450 +quit
